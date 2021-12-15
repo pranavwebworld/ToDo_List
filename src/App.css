@@ -3,8 +3,17 @@
     padding: 0;
   }
   
+
+
+
   body {
-    background-color: #4a52a5;
+
+
+background-color: rgba(182, 226, 250, 0.755);
+
+
+
+box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.4);
   }
   
   .app {
@@ -20,25 +29,37 @@
   
   .app h1,
   h2 {
-    color: white;
+    color: rgb(242, 226, 226);
   }
   
+
+  .app h3 {
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+  }
   .app .input {
+    margin-left: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+
+
+
+  
   
   .app .input {
     margin-top: 0.8em;
     width: 20em;
     height: 2em;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 6px;
     padding: 5px;
+    box-shadow: inset 1px 1px 2px rgb(164, 164, 164);
   }
   
   .app .input input {
@@ -63,9 +84,9 @@
   }
   .app .todos .todo {
     margin-top: 0.8em;
-    width: 20em;
+    width: 19em;
     height: 2em;
-    background-color: white;
+    background-color:#d5e5a3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,15 +101,13 @@
   
   .app .todos .todo .left p {
     margin-left: 3px;
-    font-size: medium;
-    font-weight: 700;
+    font-size: 24px;
+    font-family: fantasy;
+    font-weight: 400;
     font-style: normal;
     color: grey;
   }
   
-  
-
-
 
   body{margin-top:20px;}
 
@@ -98,7 +117,7 @@
 }
 
 .coloured-cards .card {
-    margin-top: 30px;
+    margin-top: 3px;
 }
 
 .card[data-radius="none"] {
@@ -107,7 +126,7 @@
 .card {
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-    background-color: #FFFFFF;
+    background-color: #305fd5;
     color: #252422;
     margin-bottom: 20px;
     position: relative;
@@ -120,7 +139,7 @@
 }
 .card.card-just-text .content {
     padding: 50px 65px;
-    text-align: center;
+  
 }
 .card .content {
     padding: 20px 20px 10px 20px;
@@ -224,4 +243,11 @@ a:hover, a:focus {
 }
 .card[data-color="orange"] .category {
     color: #e95e37;
+}
+
+.fontwhites{
+
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: #474748 !important;
+
 }

@@ -3,20 +3,27 @@ import './App.css';
 
 import { useState } from 'react'
 
+import Moment from 'react-moment';
+
 
 function App() {
 
   const [toDos, setToDos] = useState([])
   const [toDo, setToDo] = useState('')
 
+  const dateToFormat = datenew;
+  { var datenew = Date()}
+
   return (
     <div className="app">
       <div className="mainHeading">
-        <h1>ToDo List</h1>
+
+        <h1 className='fontwhites' >ToDo List</h1>
       </div>
+      
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+        <h2 className="fontwhites" ><Moment format='MMMM Do YYYY, h:mm:ss a'>{dateToFormat}</Moment> </h2>
       </div>
       <div className="input">
         <input value={toDo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
@@ -28,6 +35,27 @@ function App() {
 
 
         return (
+
+
+
+          <div className="col-md-4 col-sm-6 content-card">
+           
+          <div className="card-big-shadow">
+            
+              <div className="card card-just-text " data-background="color" data-color="green" data-radius="none">
+              <i  onClick={() => setToDos(toDos.filter(obj2 => {
+
+if (obj2.id === obj.id) {
+
+  obj2 = null
+
+}
+return obj2
+
+
+}))} className="fas fa-times"> <h3><Moment  format='DD/MM/YYYY' >{dateToFormat}</Moment></h3> </i> 
+                  <div class="content">
+                  
 
           <div className="todos">
             <div className="todo">
@@ -44,28 +72,27 @@ function App() {
 
                   }))
                 }} value={obj.status} type="checkbox" name="" id="" />
-
+  
                 <p>{obj.text}</p>
 
               </div>
 
               <div className="right">
 
-                <i onClick={() => setToDos(toDos.filter(obj2 => {
-
-                  if (obj2.id === obj.id) {
-
-                    obj2 = null
-
-                  }
-                  return obj2
-
-
-                }))} className="fas fa-times"> </i>
-
+               
               </div>
             </div>
           </div>
+
+
+
+
+          </div>
+            </div>
+        </div>
+    </div>
+    
+
 
         )
       })}
@@ -76,9 +103,34 @@ function App() {
 
         if (obj.status) {
 
+
           return (
 
-            <h1>{obj.text}</h1>
+
+
+            <div className="col-md-4 col-sm-6 content-card">
+               
+          <div className="card-big-shadow">
+            
+              <div className="card card-just-text " data-background="color" data-color="orange" data-radius="none">
+              <h3 >.  Task done <Moment format='DD/MM/YYYY' >{dateToFormat}</Moment> </h3> 
+                  <div class="content">
+
+                 
+                  <del style={{color:'white',fontSize:'30px'}}  >{obj.text}</del>
+        
+
+              
+              </div>
+            </div>
+          </div>
+
+
+
+          </div>
+      
+         
+
 
           )
 
@@ -86,6 +138,12 @@ function App() {
 
         return null
       })}
+
+
+
+
+
+
     </div>
   );
 }
