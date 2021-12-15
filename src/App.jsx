@@ -20,7 +20,7 @@ function App() {
       </div>
       <div className="input">
         <input value={toDo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
-        <i onClick={() => setToDos([...toDos,{id:Date.now(), text:toDo,status:false}])} className="fas fa-plus"></i>
+        <i onClick={() => setToDos([...toDos, { id: Date.now(), text: toDo, status: false }])} className="fas fa-plus"></i>
       </div>
 
 
@@ -30,48 +30,62 @@ function App() {
         return (
 
           <div className="todos">
-          <div className="todo">
-            <div className="left">
-              <input  onChange={(e)=>{setToDos(toDos.filter(obj2=>{
+            <div className="todo">
+              <div className="left">
+                <input onChange={(e) => {
+                  setToDos(toDos.filter(obj2 => {
 
-                if(obj2.id===obj.id){
+                    if (obj2.id === obj.id) {
 
-                    obj2.status=e.target.checked 
+                      obj2.status = e.target.checked
 
-                }
-                return obj2
+                    }
+                    return obj2
 
-              }))}}   value={obj.status} type="checkbox" name="" id="" />
+                  }))
+                }} value={obj.status} type="checkbox" name="" id="" />
 
-              <p>{obj.text}</p>
-          
+                <p>{obj.text}</p>
+
               </div>
-            <div className="right">
-              <i className="fas fa-times"></i>
+
+              <div className="right">
+
+                <i onClick={() => setToDos(toDos.filter(obj2 => {
+
+                  if (obj2.id === obj.id) {
+
+                    obj2 = null
+
+                  }
+                  return obj2
+
+
+                }))} className="fas fa-times"> </i>
+
+              </div>
             </div>
           </div>
-        </div>
 
         )
       })}
 
 
 
+      {toDos.map((obj) => {
 
-  {toDos.map((obj)=>{
+        if (obj.status) {
 
-  if(obj.status){
+          return (
 
-    return(
+            <h1>{obj.text}</h1>
 
-      <h1>{obj.text}</h1>
+          )
 
-    )
+        }
 
-  }
-
-  return null
-  })}
+        return null
+      })}
     </div>
   );
 }
